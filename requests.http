@@ -1,0 +1,124 @@
+###
+GET http://localhost:9200
+
+###
+PUT http://localhost:9200/airports_http
+Content-Type: application/json
+
+{
+  "mappings": {
+    "properties": {
+      "name": {
+        "type": "text"
+      },
+      "code": {
+        "type": "keyword"
+      },
+      "city": {
+        "type": "text"
+      },
+      "country": {
+        "type": "text"
+      }
+    }
+  }
+}
+
+###
+POST http://localhost:9200/airports_http/_doc
+Content-Type: application/json
+
+{"code": "KTW","name": "Pyrzowice","city": "Katowice","country": "Polska"}
+
+###
+POST  http://localhost:9200/_analyze
+Content-Type: application/json
+
+{
+  "analyzer": "standard",
+  "text": "Warsaw-Okęcie CHOPIN Airport."
+}
+
+###
+POST http://localhost:9200/airports_http/_bulk/
+Content-Type: application/json
+
+< ./airports.json
+
+###
+GET http://localhost:9200/airports_http/_search
+Content-Type: application/json
+
+{
+  "query": {
+    "match_all": {}
+  }
+}
+
+###
+GET http://localhost:9200/airports_http/_search
+Content-Type: application/json
+
+{
+  "query": {
+    "term": {
+      "city": "katowice"
+    }
+  }
+}
+
+###
+GET http://localhost:9200/airports_http/_search
+Content-Type: application/json
+
+{
+  "query": {
+    "match": {
+      "city": "katowice"
+    }
+  }
+}
+
+###
+GET http://localhost:9200/airports_http/_search
+Content-Type: application/json
+
+{
+  "query": {
+    "multi_match": {
+      "fields": [
+        "city",
+        "name",
+        "country"
+      ],
+      "query": "polska katowice"
+    }
+  }
+}
+
+###
+GET http://localhost:9200/airports_http/_search
+Content-Type: application/json
+
+{
+  "query": {
+    "match_phrase_prefix": {
+      "city": "kat"
+    }
+  }
+}
+
+###
+GET http://localhost:9200/airports_http/_search
+Content-Type: application/json
+
+{
+  "query": {
+    "match": {
+      "city": {
+        "query": "Krakuw",
+        "fuzziness": 1
+      }
+    }
+  }
+}

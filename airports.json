@@ -1,0 +1,10 @@
+{ "index" : { "_index" : "airports_http" } }
+{"code": "KRK","name": "Balice","city": "Kraków","country": "Polska"}
+{ "index" : { "_index" : "airports_http" } }
+{"code": "WMI","name": "Modlin","city": "Warszawa","country": "Polska"}
+{ "index" : { "_index" : "airports_http" } }
+{"code": "WAW","name": "Okęcie","city": "Warszawa","country": "Polska"}
+{ "index" : { "_index" : "airports_http" } }
+{"code": "WRO","name": "Strachowice","city": "Wrocław","country": "Polska"}
+{ "index" : { "_index" : "airports_http" } }
+{"code": "IEG","name": "Babimost","city": "Zielona Góra","country": "Polska"}
