@@ -3,10 +3,11 @@ PHPersSilesia17
 
 Oprogramowanie potrzebne do uruchomienia przykładów
 ------------
-- Docker
-- Docker Compose
+- Docker: https://docs.docker.com/
+- Docker Compose: https://docs.docker.com/compose/
 
-Uruchomienie przykładów:
+Uruchomienie przykładów
+------------
 ```bash
     docker-compose up -d
 ```
