@@ -8,6 +8,8 @@ Uruchomienie przykładów:
 
 Po wystartowaniu dockera możemy już korzystać z większości przykładów w pliku `requests.http`
 
+Plik `requests.http` można otworzyć w PhpStorm lub w VS Code z zainstalowanym rozszerzeniem REST Client: https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+
 Aby przetestować przykłady w postaci plików PHP należy wykonać następujące kroki:
 
 ```bash
