@@ -1,0 +1,12 @@
+{
+    "name": "esky/phpers_elasticsearch",
+    "require": {
+        "php": ">=8.1",
+        "elasticsearch/elasticsearch": "^8.6"
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": false
+        }
+    }
+}

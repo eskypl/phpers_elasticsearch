@@ -1,5 +1,21 @@
 version: "3.8"
 services:
+  php:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        USER_ID: 1000 # value from id -u command
+        GROUP_ID: 1000 # value from id -g command
+    volumes:
+      - ./:/var/www/phpers_elasticsearch
+    working_dir: /var/www/phpers_elasticsearch
+    stdin_open: true
+    tty: true
+    ports:
+      - 8000:8000
+    depends_on:
+      - elasticsearch
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:8.6.0
     environment:
