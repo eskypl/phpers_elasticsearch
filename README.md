@@ -1,6 +1,11 @@
 PHPersSilesia17
 ===============
 
+Oprogramowanie potrzebne do uruchomienia przykładów
+------------
+- Docker
+- Docker Compose
+
 Uruchomienie przykładów:
 ```bash
     docker-compose up -d
